@@ -1,4 +1,6 @@
-﻿<div class="d-flex align-center flex-grow-1 d-md-none">
+﻿@* d-md-none：d-***：表示在不同屏幕尺寸下的显示行为；○	**md**：表示中等屏幕尺寸（medium，通常指屏幕宽度 ≥ 768px）；○	**none**：表示隐藏元素。 *@
+@* 下面代码在小屏幕下使用，可以改变浏览器宽度查看效果 *@
+<div class="d-flex align-center flex-grow-1 d-md-none">
     <MudTooltip Text="Drawer">
         <MudIconButton OnClick="DrawerToggleCallback" Icon="@Icons.Material.Rounded.Notes" Color="Color.Inherit" Edge="Edge.Start" aria-label="Open drawer" />
     </MudTooltip>
@@ -12,8 +14,10 @@
         <MudIconButton Icon="@Icons.Material.Rounded.Search" Color="Color.Inherit" Edge="Edge.End" OnClick="@(() => OpenSearchDialog())" aria-label="Open search dialog" />
     </MudTooltip>
 </div>
+@* 在中等及以上屏幕设备（宽度 ≥ 768px）上显示，并将元素设置为 flex 布局。 *@
 <div class="d-none d-md-flex align-center flex-grow-1">
     <NavLink ActiveClass="d-flex align-center me-4" href="/">
+        @* 关键点：顶部logo *@
         <MudBlazorLogo Class="docs-mudblazor-logo" />
         <MudText Color="Color.Primary" Typo="Typo.h5" Class="docs-brand-text">MudBlazor</MudText>
     </NavLink>
